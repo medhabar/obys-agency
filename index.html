@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Obys Agency</title>
+</head>
+<body> 
+    
+    <!-- Locomotive Scroll internally uses the concept of a scroll container. Apko usko batana padta h ki konsa element "scroll container" banega, i.e., wese to #main
+        Locomotive us hi container k andr k elements ko observe krta h aur unke data-scroll attributes ko control krta h (like data-scroll-speed, data-scroll-direction, etc.)-->
+    
+    <!-- Scroll container ka mtlb h vo element jis k andr apka scroll hone wala content hota h. Jab aap Locomotive Scroll use krti ho, to apko use batana padta hai ki: "Ye le bhai, ye mera area h jisme tujhe smooth scrolling aur animation krna h-->
+
+    <!-- Locomotive Scroll fake scroll use krta h — page scroll nai hota, ek div ko transform krke hilaya jata h. Is wajh se "position: fixed" ka reference, viewport se toot jata h, aur element glt jagha chipak jata h.
+        🔧 Solution:
+                Fixed element ko scroll container k bahr rkho - jo hum loader k case me kr rhe  h is project me.
+                Ya use kro: "data-scroll-sticky" (Locomotive ka apna fix-style) -->
+
+
+
+    <!-- LOADER START -->
+    <div id="loader">
+
+        <div class="lines">
+
+            <div id="line1-part1">
+                <h5 id="one">00</h5>
+                <h5 id="two"> - 100</h5>
+            </div>
+
+            <h1>your</h1>
+
+        </div>
+
+        <div class="lines">
+            <h1>web experience</h1>
+        </div>
+
+        <div class="lines">
+            <h1>is loading right</h1>
+            <h2>Now</h2>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <div id="main">         <!-- locomotive use krne kliye ek parent div important h and sb kuch "structured" hona chahiye -->
+                   
+        
+        
+
+
+      <div id="page1">
+        
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+      <div id="page2"></div>
+      <div id="page3"></div>
+    </div>
+
+
+
+
+
+
+
+    
+
+
+    <!-- locomotive.js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+
+    <!-- gsap -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+      integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- scrollTrigger -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+      integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+    <script src="script.js"></script>
+</body>
+</html>

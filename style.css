@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plain Light";
+    color: #fff
+}
+
+html, body { 
+    height: 100%;
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'Plain Light';
+    src: url('fonts/plain-light-webfont.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Silk Serif';
+    src: url('fonts/silkserif-lightitalic-webfont.ttf') format('truetype');
+}
+  
+
+
+/* LOADER START */
+
+#loader {
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    position: fixed;
+    z-index: 999;
+    padding: 16vh 7vw;
+
+    /*Padding - Agar tum chahte ho element parent ke andar thoda shift ho (edge se door ho) */
+    /*Margin - Agar tum chahte ho element parent se thoda distance pe rahe (baahar ki taraf space chahiye) */
+}
+
+
+
+/*-------------- YOUR WEB EXPERIENCE IS LOADING RIGHT ---------------*/
+
+.lines {       
+    height: fit-content;
+    /* tells an element: Don’t stretch to fill space. Don’t shrink too tight either. Just wrap yourself perfectly around your content — no more, no less, just right */
+
+    overflow: hidden;   /* tells an element to hide any of its own overflowing content, in this case it is the h1 */
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 4vw;
+}
+
+.lines h1 {
+    font-size: 7vw;   /* Font size uses vw instead of vh because width is a more stable and meaningful measure for scaling readable content across devices. */
+    text-transform: uppercase;   
+}
+
+
+/*------------------------- NOW ---------------------- */
+
+.lines h2 {
+    font-size: 5.48vw;
+    text-transform: uppercase;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes anime {
+    0% {
+        font-family: "Silk Serif";
+        -webkit-text-stroke: 0.2px #fff;      /* property jo text k upar border banane ka kaam krti h */
+        color: transparent;
+        font-weight: 500;
+        opacity: 1;
+    }
+
+    48% {
+        font-family: "Silk Serif";
+        -webkit-text-stroke: 0.2px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 0;
+    }
+
+    50% {
+        font-family: "Plain Light";       
+        color: #fff;
+        font-weight: 500;
+        opacity: 1;
+    }
+
+    100% {
+        font-family: "Plain Light"; 
+        color: #fff;
+        font-weight: 500;
+        opacity: 0;
+    }
+    
+}
+
+
+/*-------------------------- 00-100 ----------------------------*/
+
+#line1-part1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+#line1-part1 #one,  #line1-part1 #two{
+    font-size: 3vw;
+    font-family: "silk serif";
+    font-weight: 500;
+}
+
+
+/*-------------------------- 00 --------------------------*/
+
+#line1-part1 #one{       
+
+    width: 5vw;         /* Timer ki width ki h taki adjacent elements (like "your") static hojye. Agrtimer wale element ko fixed width nai di to hr update k time element ka size thoda bht change hoga aur uske adjacent text "your" bhi layout ke hisaab se push/move hoga */
+
+    text-align: right;      /* taki timer ka 1st half (00) 2nd half (100) k taraf inclined ho */
+}
+
+
+
+
+#main {
+
+    position: relative;      /* taki Locomotive uske andar k elements ka position aur animation sahi se calculate kr sake. Agar aap ye nai dogi, to animations glt jgha dikhne lgti h ya scroll effect kaam nai krta*/
+
+    
+    background-color: #030303;
+}
+
+#page1 {
+    height: 100vh;  /*parent ko height nai dete therefore baccho ko vh me dena % me nai aur width % me*/
+    width: 100%;
+    background-color: #181818;
+}
+
+#page2 {
+    height: 100vh;  
+    width: 100%;
+    background-color: #151515;
+}
+
+#page3 {
+    height: 100vh;  
+    width: 100%;
+    background-color: #151515;
+}
