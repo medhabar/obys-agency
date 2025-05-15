@@ -50,14 +50,14 @@ function loadingAnimation() {
   tl.to("#loader", {
     opacity: 0,
     duration: 0.2,
-    delay: 2.25, // delay utna do jitne me timer pura load ho jaye
+    delay: 2.7, // delay utna do jitne me timer pura load ho jaye
   });
 
   // page1 ko niche se upar lana h
   tl.from("#page1", {
     y: 1600,
     opacity: 0,
-    delay: 0.6,
+    delay: 0.4,
     ease: Power4,
     duration: 0.9,
   });
@@ -80,7 +80,7 @@ function loadingAnimation() {
     stagger: 0.1,
   });
 }
-loadingAnimation();
+// loadingAnimation();
 
 // CURSOR
 function cursorAnimation() {

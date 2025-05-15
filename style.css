@@ -12,6 +12,10 @@ body {
   width: 100%;
 }
 
+body{
+    overflow-x: hidden; /* yeh horizontal scroll ko band krta h */
+}
+
 @font-face {
   font-family: "Plain Light";
   src: url("fonts/plain-light-webfont.ttf") format("truetype");
@@ -73,6 +77,7 @@ body {
 
 .lines h2 {
   font-size: 5.48vw;
+  font-weight: 800;
   text-transform: uppercase;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -139,7 +144,7 @@ body {
 #main {
   position: relative; /* taki Locomotive uske andar k elements ka position aur animation sahi se calculate kr sake. Agar aap ye nai dogi, to animations glt jgha dikhne lgti h ya scroll effect kaam nai krta*/
 
-  background-color: #030303;
+  background-color: #000000;
 }
 
 /* PAGE 1 START */
@@ -147,7 +152,8 @@ body {
 #page1 {
   height: 100vh; /*parent ko height nai dete therefore baccho ko vh me dena % me nai aur width % me*/
   width: 100%;
-  background-color: #181818;
+  position: relative;
+  background-color: #151515;
 }
 
 /* ---------------------NAV BAR---------------------------- */
@@ -198,36 +204,182 @@ body {
   line-height: 7vw; /* Use `line-height` in `vw` (not `vh`) when `font-size` is also in `vw`, so that both scale together with screen width and keep the line spacing balanced — using `vh` can make spacing look odd since it reacts to screen height, not width. */
 }
 
-.hero h2, .hero h3{
-    font-size: 7.2vw;
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: 7vw;
+.hero h2 {
+  font-size: 7.2vw;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 7vw;
+  border-bottom: 0.6vw solid #ededed;
+  letter-spacing: 0.3vw;
+  padding-bottom: 0.3vw;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero h3 {
+  font-size: 7.2vw;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 7vw;
 }
 
 .hero h2:hover {
-    -webkit-text-stroke: 1px #fff;
-    font-weight: 500;
-    color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  font-weight: 500;
+  color: transparent;
+  border-bottom-color: transparent;
+  transition: all 0.3s ease-in-out;
 }
 
-
-
-
-
-
-
-
-
+/* ----------------------- PAGE 2 - video ---------------------- */
 
 #page2 {
   height: 100vh;
   width: 100%;
+  padding-top: 16vh;
+  position: relative;
   background-color: #151515;
 }
 
+#video-container {
+  height: 70vh;
+  width: 71vw;
+  position: relative;
+  left: 28%;
+  background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+  overflow: hidden;
+}
+
+#video-container img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+
+#video-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#video-cursor {
+  height: 10vw;
+  width: 10vw;
+  background-color: #ffa63d;
+  border-radius: 50%;
+  position: absolute;
+  top: 8%;
+  left: 80%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#video-cursor i {
+  font-size: 2vw;
+}
+
+/* ----------------------------- PAGE 3 ----------------------- */
+
 #page3 {
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #383838;
+  position: relative;
+}
+
+/* ------------------------ PAGE 4: about obys------------------------ */
+
+#page4 {
+  min-height: 100vh;
   width: 100%;
   background-color: #151515;
+  position: relative;
+  padding-top: 15vh;
+  margin-bottom: -28vh
+}
+
+#page4-content {
+  width: 72vw;
+  margin-left: 28%;
+  position: relative;
+}
+  
+/* page 4 heading, underline and content */
+#page4-content h1 {
+  text-transform: uppercase;
+  font-size: 7vw;
+}
+
+#page4-content .underline {
+  width: 100%;
+  height: 0.5px;
+  background-color: #ffffffd2;
+  margin: 5vw 0;
+}
+
+#page4-content > p {
+  /* > ka mtlb h page4-content k andar ka direct p child uske alwa koi p h to use consider na kre */
+  font-size: 2.3vw;
+  width: 55%;
+  margin-bottom: 4vw;
+}
+
+/* page 4 img and side para */
+#page4-hero {
+  display: flex;
+}
+
+#page4-hero img {
+  width: 48%;
+}
+
+#page4-hero p {
+  font-size: 0.98vw;
+  width: 30%;
+  line-height: 1.6vw;
+  margin-left: 1.8vw;
+}
+
+/* page 4 blue div */
+#blue-div {
+    background-color: #3F7DF4;
+    width: 46%;
+    padding-top:2.7vw;
+    padding-right: 3.7vw;
+    padding-left: 3.7vw;
+    padding-bottom: 4.2vw;
+    position: relative;
+    margin-top: -28vh;
+    margin-left: 21vw;
+}
+
+.blue-div-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2.5vw 0;
+    border-bottom: 1px solid #F5F8FE;
+}
+
+.blue-div-element h4 {
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+.blue-div-element p {
+    width: 40%;
+    font-size: 0.98vw;
+}
+
+
+/* -----------------PAGE 5 - infinite motion ------------------ */
+
+#page5 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #151515;
+    padding: 5vw 0;
 }
